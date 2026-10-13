@@ -59,7 +59,7 @@
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D8EF"}, "freq": 5,
   "signals": [
-    {"id": "VAUXHALLOPEL_BAT_T_V2", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "celsius" }, "name": "Battery temperature"}
+    {"id": "VAUXHALLOPEL_BAT_T", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "celsius" }, "name": "Battery temperature"}
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D8F9"}, "freq": 5,
   "signals": [
@@ -67,15 +67,15 @@
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D8FB"}, "freq": 5,
   "signals": [
-    {"id": "VAUXHALLOPEL_ECT_V2", "path": "Engine", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "celsius" }, "name": "Coolant temperature", "suggestedMetric": "engineCoolantTemperature"}
+    {"id": "VAUXHALLOPEL_ECT", "path": "Engine", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "celsius" }, "name": "Coolant temperature", "suggestedMetric": "engineCoolantTemperature"}
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D8FF"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_AC_HIGH_SIDE_P_V2", "path": "Engine", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "bars" }, "name": "Air conditioning high side pressure"}
+    {"id": "VAUXHALLOPEL_AC_HIGH_SIDE_P", "path": "Engine", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "bars" }, "name": "Air conditioning high side pressure"}
   ]},
 { "hdr": "6A6", "rax": "686", "fcm1": true, "dbg": true, "cmd": {"22": "D407"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS_V2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "percent" }, "name": "Accelerator pedal position"}
+    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "percent" }, "name": "Accelerator pedal position"}
   ]},
 { "hdr": "6A6", "rax": "686", "fcm1": true, "dbg": true, "cmd": {"22": "D49C"}, "freq": 30,
   "signals": [
@@ -103,7 +103,7 @@
   ]},
 { "hdr": "6A8", "rax": "688", "fcm1": true, "din": "C0", "dbg": true, "cmd": {"22": "D400"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_RPM_V2", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Engine RPM", "suggestedMetric": "engineSpeed"}
+    {"id": "VAUXHALLOPEL_RPM", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Engine RPM", "suggestedMetric": "engineSpeed"}
   ]},
 { "hdr": "6A8", "rax": "688", "fcm1": true, "dbg": true, "cmd": {"22": "D402"}, "freq": 0.25,
   "signals": [
@@ -179,7 +179,7 @@
   ]},
 { "hdr": "6A8", "rax": "688", "fcm1": true, "dbg": true, "cmd": {"22": "D41F"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_FUEL_P_V2", "path": "Fuel", "fmt": { "len": 16, "max": 32.76, "min": -32.76, "div": 999.9999525026, "sign": true, "unit": "bars" }, "name": "Fuel pressure"}
+    {"id": "VAUXHALLOPEL_FUEL_P", "path": "Fuel", "fmt": { "len": 16, "max": 32.76, "min": -32.76, "div": 999.9999525026, "sign": true, "unit": "bars" }, "name": "Fuel pressure"}
   ]},
 { "hdr": "6A8", "rax": "688", "fcm1": true, "dbg": true, "cmd": {"22": "D421"}, "freq": 1,
   "signals": [
@@ -454,7 +454,7 @@
   ]},
 { "hdr": "6A8", "rax": "688", "fcm1": true, "dbg": true, "cmd": {"22": "D509"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_EGR_VLV_POS_V2", "path": "Engine", "fmt": { "len": 16, "blsb": true, "max": 327, "min": -327, "div": 100.0000022352, "sign": true, "unit": "percent" }, "name": "Exhaust gas recirculation valve position"}
+    {"id": "VAUXHALLOPEL_EGR_VLV_POS", "path": "Engine", "fmt": { "len": 16, "blsb": true, "max": 327, "min": -327, "div": 100.0000022352, "sign": true, "unit": "percent" }, "name": "Exhaust gas recirculation valve position"}
   ]},
 { "hdr": "6A8", "rax": "688", "fcm1": true, "dbg": true, "cmd": {"22": "D50C"}, "freq": 1,
   "signals": [
@@ -1041,7 +1041,7 @@
     {"id": "VAUXHALLOPEL_INPUT_SHFT_SPD", "path": "Movement", "fmt": {"bix": 48,  "len": 8, "max": 8160,              "mul": 32,                        "unit": "rpm"     }, "name": "Input shaft speed"},
     {"id": "VAUXHALLOPEL_CMD_OIL_P",      "path": "Engine",   "fmt": {"bix": 128, "len": 8, "max": 25.5,                         "div": 10,             "unit": "bars"    }, "name": "Commanded oil pressure"},
     {"id": "VAUXHALLOPEL_ACT_OIL_P",      "path": "Engine",   "fmt": {"bix": 144, "len": 8, "max": 12.75,                        "div": 20,             "unit": "bars"    }, "name": "Actual oil pressure"},
-    {"id": "VAUXHALLOPEL_ATF_T_V3",       "path": "Engine",   "fmt": {"bix": 168, "len": 8, "max": 205,   "min": -50,                       "add": -50, "unit": "celsius" }, "name": "Transmission fluid temperature", "suggestedMetric": "transmissionFluidTemperature"}
+    {"id": "VAUXHALLOPEL_ATF_T",          "path": "Engine",   "fmt": {"bix": 168, "len": 8, "max": 205,   "min": -50,                       "add": -50, "unit": "celsius" }, "name": "Transmission fluid temperature", "suggestedMetric": "transmissionFluidTemperature"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "din": "03", "dbg": true, "cmd": {"21": "C8"}, "freq": 0.25,
   "signals": [
@@ -1141,11 +1141,11 @@
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D531"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_RL_WHL_SPD_V2", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100.0000022352, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "VAUXHALLOPEL_RL_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100.0000022352, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D532"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_RR_WHL_SPD_V2", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100.0000022352, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+    {"id": "VAUXHALLOPEL_RR_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100.0000022352, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D533"}, "freq": 0.25,
   "signals": [
@@ -1891,8 +1891,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "23"}, "freq": 5,
   "signals": [
-    {"id": "VAUXHALLOPEL_AAT_7E0", "path": "Engine",  "fmt": {           "len": 16, "max": 1023, "div": 64, "unit": "fahrenheit" }, "name": "Ambient air temperature"},
-    {"id": "VAUXHALLOPEL_BAT_T",   "path": "Battery", "fmt": {"bix": 48, "len": 16, "max": 1023, "div": 64, "unit": "fahrenheit" }, "name": "Battery temperature"}
+    {"id": "VAUXHALLOPEL_AAT_7E0",  "path": "Engine",  "fmt": {           "len": 16, "max": 1023, "div": 64, "unit": "fahrenheit" }, "name": "Ambient air temperature"},
+    {"id": "VAUXHALLOPEL_BAT_T_V2", "path": "Battery", "fmt": {"bix": 48, "len": 16, "max": 1023, "div": 64, "unit": "fahrenheit" }, "name": "Battery temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "2D"}, "freq": 5,
   "signals": [
@@ -1966,7 +1966,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "B7"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_FUEL_P", "path": "Fuel", "fmt": {"bix": 200, "len": 16, "max": 6553, "div": 10, "unit": "kilopascal" }, "name": "Fuel pressure"}
+    {"id": "VAUXHALLOPEL_FUEL_P_V2", "path": "Fuel", "fmt": {"bix": 200, "len": 16, "max": 6553, "div": 10, "unit": "kilopascal" }, "name": "Fuel pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"21": "CA"}, "freq": 5,
   "signals": [
@@ -2016,7 +2016,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "011D"}, "freq": 5,
   "signals": [
-    {"id": "VAUXHALLOPEL_ECT", "path": "Engine", "fmt": { "len": 8, "max": 191, "min": -64, "add": -64, "unit": "celsius" }, "name": "Engine coolant temperature"}
+    {"id": "VAUXHALLOPEL_ECT_V2", "path": "Engine", "fmt": { "len": 8, "max": 191, "min": -64, "add": -64, "unit": "celsius" }, "name": "Engine coolant temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0127"}, "freq": 5,
   "signals": [
@@ -2166,7 +2166,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0329"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_AC_HIGH_SIDE_P", "path": "Engine", "fmt": { "len": 8, "max": 3570, "mul": 14, "unit": "kilopascal" }, "name": "Air conditioning high side pressure"}
+    {"id": "VAUXHALLOPEL_AC_HIGH_SIDE_P_V2", "path": "Engine", "fmt": { "len": 8, "max": 3570, "mul": 14, "unit": "kilopascal" }, "name": "Air conditioning high side pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "03BC"}, "freq": 30,
   "signals": [
@@ -2216,7 +2216,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "114B"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS", "path": "Movement", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Accelerator pedal position"}
+    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS_V2", "path": "Movement", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Accelerator pedal position"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1247"}, "freq": 0.25,
   "signals": [
@@ -2252,11 +2252,11 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1739"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_RL_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 1023.9843, "div": 64, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "VAUXHALLOPEL_RL_WHL_SPD_V2", "path": "Tires", "fmt": { "len": 16, "max": 1023.9843, "div": 64, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "173A"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_RR_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 1023.9843, "div": 64, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+    {"id": "VAUXHALLOPEL_RR_WHL_SPD_V2", "path": "Tires", "fmt": { "len": 16, "max": 1023.9843, "div": 64, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "189F"}, "freq": 1,
   "signals": [
@@ -2420,7 +2420,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "A0DA"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_EGR_VLV_POS", "path": "Engine", "fmt": {"bix": 16, "len": 16, "max": 2047, "min": -2048, "div": 16, "sign": true, "unit": "percent" }, "name": "Exhaust gas recirculation valve position"}
+    {"id": "VAUXHALLOPEL_EGR_VLV_POS_V2", "path": "Engine", "fmt": {"bix": 16, "len": 16, "max": 2047, "min": -2048, "div": 16, "sign": true, "unit": "percent" }, "name": "Exhaust gas recirculation valve position"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "A0DC"}, "freq": 5,
   "signals": [
@@ -2501,7 +2501,7 @@
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "04FE"}, "freq": 5,
   "signals": [
     {"id": "VAUXHALLOPEL_TRANS_T_VAR_2_V2", "path": "Transmission", "fmt": { "len": 8, "max": 419, "min": -40, "mul": 9,   "div": 5, "add": -40, "unit": "fahrenheit" }, "name": "Transmission temperature, variant 2"},
-    {"id": "VAUXHALLOPEL_ATF_T",            "path": "Transmission", "fmt": { "len": 8, "max": 300, "min": -30, "mul": 1.8,           "add": -40, "unit": "fahrenheit" }, "name": "Transmission temperature",            "suggestedMetric": "transmissionFluidTemperature"},
+    {"id": "VAUXHALLOPEL_ATF_T_V2",         "path": "Transmission", "fmt": { "len": 8, "max": 300, "min": -30, "mul": 1.8,           "add": -40, "unit": "fahrenheit" }, "name": "Transmission temperature",            "suggestedMetric": "transmissionFluidTemperature"},
     {"id": "VAUXHALLOPEL_ATF_T_2",          "path": "Transmission", "fmt": { "len": 8, "max": 300, "min": -30, "mul": 1.8,           "add": -40, "unit": "fahrenheit" }, "name": "Transmission temperature"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "08DF"}, "freq": 5,
@@ -2566,7 +2566,7 @@
   ]},
 { "hdr": "DA10", "rax": "10", "din": "03", "dbg": true, "cmd": {"22": "1000"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_RPM", "path": "Engine", "fmt": { "len": 16, "max": 16383, "div": 4, "unit": "rpm" }, "name": "Engine RPM"}
+    {"id": "VAUXHALLOPEL_RPM_V2", "path": "Engine", "fmt": { "len": 16, "max": 16383, "div": 4, "unit": "rpm" }, "name": "Engine RPM"}
   ]},
 { "hdr": "DA10", "rax": "10", "din": "03", "dbg": true, "cmd": {"22": "1002"}, "freq": 30,
   "signals": [
@@ -2876,7 +2876,7 @@
   ]},
 { "hdr": "DA18", "rax": "18", "dbg": true, "cmd": {"22": "04FE"}, "freq": 5,
   "signals": [
-    {"id": "VAUXHALLOPEL_ATF_T_V2",     "path": "Transmission", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature"},
+    {"id": "VAUXHALLOPEL_ATF_T_V3",     "path": "Transmission", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature"},
     {"id": "VAUXHALLOPEL_ATF_T_4THGEN", "path": "Transmission", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature", "suggestedMetric": "transmissionFluidTemperature"}
   ]},
 { "hdr": "DA18", "rax": "18", "dbg": true, "cmd": {"22": "051A"}, "freq": 0.25,
