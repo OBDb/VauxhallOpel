@@ -14,11 +14,12 @@
   "commands": [
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D402"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_VSS", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "VAUXHALLOPEL_VSS",     "path": "Movement", "fmt": { "len": 16, "max": 511,  "div": 128, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"},
+    {"id": "VAUXHALLOPEL_VSS_6A2", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10,  "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D434"}, "freq": 5,
   "signals": [
-    {"id": "VAUXHALLOPEL_AAT_V2", "path": "Engine", "fmt": { "len": 8, "max": 127, "min": -128, "sign": true, "unit": "celsius" }, "name": "Ambient temperature"}
+    {"id": "VAUXHALLOPEL_AAT", "path": "Engine", "fmt": { "len": 8, "max": 127, "min": -128, "sign": true, "unit": "celsius" }, "name": "Ambient temperature"}
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D496"}, "freq": 5,
   "signals": [
@@ -26,7 +27,7 @@
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D49C"}, "freq": 30,
   "signals": [
-    {"id": "VAUXHALLOPEL_ODO_6A2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "VAUXHALLOPEL_ODO_6A2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "6A2", "rax": "682", "fcm1": true, "dbg": true, "cmd": {"22": "D802"}, "freq": 0.25,
   "signals": [
@@ -82,7 +83,7 @@
   ]},
 { "hdr": "6A6", "rax": "686", "fcm1": true, "dbg": true, "cmd": {"22": "D49C"}, "freq": 30,
   "signals": [
-    {"id": "VAUXHALLOPEL_ODO_6A6", "path": "Trips", "fmt": { "len": 32, "max": 429496729, "div": 10, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "VAUXHALLOPEL_ODO_6A6", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "6A6", "rax": "686", "fcm1": true, "dbg": true, "cmd": {"22": "DC00"}, "freq": 0.25,
   "signals": [
@@ -1035,8 +1036,8 @@
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "din": "03", "dbg": true, "cmd": {"21": "C3"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS_6A9", "path": "Movement", "fmt": {"bix": 88,  "len": 8, "max": 99.45,              "mul": 39, "div": 100,              "unit": "percent"      }, "name": "Accelerator pedal position"},
-    {"id": "VAUXHALLOPEL_ENG_TQ",              "path": "Engine",   "fmt": {"bix": 112, "len": 8, "max": 410,   "min": -100, "mul": 2,              "add": -100, "unit": "newtonMeters" }, "name": "Engine torque"}
+    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS_6A9_V2", "path": "Movement", "fmt": {"bix": 88,  "len": 8, "max": 99.45,              "mul": 39, "div": 100,              "unit": "percent"      }, "name": "Accelerator pedal position"},
+    {"id": "VAUXHALLOPEL_ENG_TQ",                 "path": "Engine",   "fmt": {"bix": 112, "len": 8, "max": 410,   "min": -100, "mul": 2,              "add": -100, "unit": "newtonMeters" }, "name": "Engine torque"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "din": "03", "dbg": true, "cmd": {"21": "C5"}, "freq": 0.25,
   "signals": [
@@ -1048,7 +1049,7 @@
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "din": "03", "dbg": true, "cmd": {"21": "C8"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_VSS_6A9", "path": "Movement", "fmt": {"bix": 96, "len": 16, "max": 655, "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "VAUXHALLOPEL_VSS_6A9_V2", "path": "Movement", "fmt": {"bix": 96, "len": 16, "max": 655, "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D405"}, "freq": 1,
   "signals": [
@@ -1080,7 +1081,7 @@
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D505"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS_6A9_6A9", "path": "Movement", "fmt": { "len": 8, "max": 127, "div": 2, "unit": "percent" }, "name": "Accelerator pedal position"}
+    {"id": "VAUXHALLOPEL_ACCEL_PEDAL_POS_6A9", "path": "Movement", "fmt": { "len": 8, "max": 127, "div": 2, "unit": "percent" }, "name": "Accelerator pedal position"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D506"}, "freq": 0.25,
   "signals": [
@@ -1328,7 +1329,7 @@
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D653"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_AUTOMATIC_TRANS_OUTPUT_SHFT_MODE", "path": "Transmission", "fmt": { "len": 16, "max": 4186112, "min": -8128, "mul": 64, "add": -8128, "unit": "rpm" }, "name": "Automatic transmission output shaft mode, calculated"}
+    {"id": "VAUXHALLOPEL_AUTOMATIC_TRANS_OUTPUT_SHFT_MODE", "path": "Transmission", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Automatic transmission output shaft mode, calculated"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D654"}, "freq": 0.25,
   "signals": [
@@ -1392,7 +1393,7 @@
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D711"}, "freq": 0.25,
   "signals": [
-    {"id": "VAUXHALLOPEL_VSS_6A9_6A9", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "VAUXHALLOPEL_VSS_6A9", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
   ]},
 { "hdr": "6A9", "rax": "689", "fcm1": true, "dbg": true, "cmd": {"22": "D730"}, "freq": 1,
   "signals": [
@@ -1695,7 +1696,118 @@
   ]},
 { "hdr": "6B4", "rax": "694", "fcm1": true, "dbg": true, "cmd": {"22": "D49C"}, "freq": 1,
   "signals": [
-    {"id": "VAUXHALLOPEL_ODO", "path": "Trips", "fmt": { "len": 32, "max": 429496729, "div": 1000, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "VAUXHALLOPEL_ODO", "path": "Trips", "fmt": { "len": 32, "max": 4194303, "div": 1024, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "6B4", "rax": "694", "fcm1": true, "dbg": true, "cmd": {"22": "D4B5"}, "freq": 3600,
+  "signals": [
+    {"id": "VAUXHALLOPEL_BAT_CELL_001_SOH", "path": "Battery", "fmt": {             "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 001 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_002_SOH", "path": "Battery", "fmt": {"bix": 16,   "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 002 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_003_SOH", "path": "Battery", "fmt": {"bix": 32,   "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 003 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_004_SOH", "path": "Battery", "fmt": {"bix": 48,   "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 004 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_005_SOH", "path": "Battery", "fmt": {"bix": 64,   "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 005 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_006_SOH", "path": "Battery", "fmt": {"bix": 80,   "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 006 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_007_SOH", "path": "Battery", "fmt": {"bix": 96,   "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 007 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_008_SOH", "path": "Battery", "fmt": {"bix": 112,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 008 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_009_SOH", "path": "Battery", "fmt": {"bix": 128,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 009 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_010_SOH", "path": "Battery", "fmt": {"bix": 144,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 010 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_011_SOH", "path": "Battery", "fmt": {"bix": 160,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 011 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_012_SOH", "path": "Battery", "fmt": {"bix": 176,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 012 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_013_SOH", "path": "Battery", "fmt": {"bix": 192,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 013 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_014_SOH", "path": "Battery", "fmt": {"bix": 208,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 014 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_015_SOH", "path": "Battery", "fmt": {"bix": 224,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 015 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_016_SOH", "path": "Battery", "fmt": {"bix": 240,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 016 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_017_SOH", "path": "Battery", "fmt": {"bix": 256,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 017 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_018_SOH", "path": "Battery", "fmt": {"bix": 272,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 018 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_019_SOH", "path": "Battery", "fmt": {"bix": 288,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 019 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_020_SOH", "path": "Battery", "fmt": {"bix": 304,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 020 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_021_SOH", "path": "Battery", "fmt": {"bix": 320,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 021 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_022_SOH", "path": "Battery", "fmt": {"bix": 336,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 022 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_023_SOH", "path": "Battery", "fmt": {"bix": 352,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 023 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_024_SOH", "path": "Battery", "fmt": {"bix": 368,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 024 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_025_SOH", "path": "Battery", "fmt": {"bix": 384,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 025 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_026_SOH", "path": "Battery", "fmt": {"bix": 400,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 026 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_027_SOH", "path": "Battery", "fmt": {"bix": 416,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 027 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_028_SOH", "path": "Battery", "fmt": {"bix": 432,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 028 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_029_SOH", "path": "Battery", "fmt": {"bix": 448,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 029 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_030_SOH", "path": "Battery", "fmt": {"bix": 464,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 030 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_031_SOH", "path": "Battery", "fmt": {"bix": 480,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 031 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_032_SOH", "path": "Battery", "fmt": {"bix": 496,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 032 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_033_SOH", "path": "Battery", "fmt": {"bix": 512,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 033 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_034_SOH", "path": "Battery", "fmt": {"bix": 528,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 034 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_035_SOH", "path": "Battery", "fmt": {"bix": 544,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 035 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_036_SOH", "path": "Battery", "fmt": {"bix": 560,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 036 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_037_SOH", "path": "Battery", "fmt": {"bix": 576,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 037 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_038_SOH", "path": "Battery", "fmt": {"bix": 592,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 038 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_039_SOH", "path": "Battery", "fmt": {"bix": 608,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 039 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_040_SOH", "path": "Battery", "fmt": {"bix": 624,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 040 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_041_SOH", "path": "Battery", "fmt": {"bix": 640,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 041 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_042_SOH", "path": "Battery", "fmt": {"bix": 656,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 042 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_043_SOH", "path": "Battery", "fmt": {"bix": 672,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 043 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_044_SOH", "path": "Battery", "fmt": {"bix": 688,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 044 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_045_SOH", "path": "Battery", "fmt": {"bix": 704,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 045 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_046_SOH", "path": "Battery", "fmt": {"bix": 720,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 046 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_047_SOH", "path": "Battery", "fmt": {"bix": 736,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 047 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_048_SOH", "path": "Battery", "fmt": {"bix": 752,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 048 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_049_SOH", "path": "Battery", "fmt": {"bix": 768,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 049 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_050_SOH", "path": "Battery", "fmt": {"bix": 784,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 050 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_051_SOH", "path": "Battery", "fmt": {"bix": 800,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 051 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_052_SOH", "path": "Battery", "fmt": {"bix": 816,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 052 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_053_SOH", "path": "Battery", "fmt": {"bix": 832,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 053 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_054_SOH", "path": "Battery", "fmt": {"bix": 848,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 054 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_055_SOH", "path": "Battery", "fmt": {"bix": 864,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 055 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_056_SOH", "path": "Battery", "fmt": {"bix": 880,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 056 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_057_SOH", "path": "Battery", "fmt": {"bix": 896,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 057 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_058_SOH", "path": "Battery", "fmt": {"bix": 912,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 058 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_059_SOH", "path": "Battery", "fmt": {"bix": 928,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 059 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_060_SOH", "path": "Battery", "fmt": {"bix": 944,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 060 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_061_SOH", "path": "Battery", "fmt": {"bix": 960,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 061 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_062_SOH", "path": "Battery", "fmt": {"bix": 976,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 062 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_063_SOH", "path": "Battery", "fmt": {"bix": 992,  "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 063 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_064_SOH", "path": "Battery", "fmt": {"bix": 1008, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 064 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_065_SOH", "path": "Battery", "fmt": {"bix": 1024, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 065 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_066_SOH", "path": "Battery", "fmt": {"bix": 1040, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 066 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_067_SOH", "path": "Battery", "fmt": {"bix": 1056, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 067 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_068_SOH", "path": "Battery", "fmt": {"bix": 1072, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 068 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_069_SOH", "path": "Battery", "fmt": {"bix": 1088, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 069 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_070_SOH", "path": "Battery", "fmt": {"bix": 1104, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 070 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_071_SOH", "path": "Battery", "fmt": {"bix": 1120, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 071 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_072_SOH", "path": "Battery", "fmt": {"bix": 1136, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 072 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_073_SOH", "path": "Battery", "fmt": {"bix": 1152, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 073 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_074_SOH", "path": "Battery", "fmt": {"bix": 1168, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 074 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_075_SOH", "path": "Battery", "fmt": {"bix": 1184, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 075 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_076_SOH", "path": "Battery", "fmt": {"bix": 1200, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 076 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_077_SOH", "path": "Battery", "fmt": {"bix": 1216, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 077 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_078_SOH", "path": "Battery", "fmt": {"bix": 1232, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 078 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_079_SOH", "path": "Battery", "fmt": {"bix": 1248, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 079 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_080_SOH", "path": "Battery", "fmt": {"bix": 1264, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 080 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_081_SOH", "path": "Battery", "fmt": {"bix": 1280, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 081 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_082_SOH", "path": "Battery", "fmt": {"bix": 1296, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 082 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_083_SOH", "path": "Battery", "fmt": {"bix": 1312, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 083 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_084_SOH", "path": "Battery", "fmt": {"bix": 1328, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 084 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_085_SOH", "path": "Battery", "fmt": {"bix": 1344, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 085 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_086_SOH", "path": "Battery", "fmt": {"bix": 1360, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 086 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_087_SOH", "path": "Battery", "fmt": {"bix": 1376, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 087 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_088_SOH", "path": "Battery", "fmt": {"bix": 1392, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 088 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_089_SOH", "path": "Battery", "fmt": {"bix": 1408, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 089 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_090_SOH", "path": "Battery", "fmt": {"bix": 1424, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 090 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_091_SOH", "path": "Battery", "fmt": {"bix": 1440, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 091 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_092_SOH", "path": "Battery", "fmt": {"bix": 1456, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 092 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_093_SOH", "path": "Battery", "fmt": {"bix": 1472, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 093 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_094_SOH", "path": "Battery", "fmt": {"bix": 1488, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 094 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_095_SOH", "path": "Battery", "fmt": {"bix": 1504, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 095 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_096_SOH", "path": "Battery", "fmt": {"bix": 1520, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 096 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_097_SOH", "path": "Battery", "fmt": {"bix": 1536, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 097 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_098_SOH", "path": "Battery", "fmt": {"bix": 1552, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 098 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_099_SOH", "path": "Battery", "fmt": {"bix": 1568, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 099 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_100_SOH", "path": "Battery", "fmt": {"bix": 1584, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 100 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_101_SOH", "path": "Battery", "fmt": {"bix": 1600, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 101 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_102_SOH", "path": "Battery", "fmt": {"bix": 1616, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 102 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_103_SOH", "path": "Battery", "fmt": {"bix": 1632, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 103 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_104_SOH", "path": "Battery", "fmt": {"bix": 1648, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 104 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_105_SOH", "path": "Battery", "fmt": {"bix": 1664, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 105 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_106_SOH", "path": "Battery", "fmt": {"bix": 1680, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 106 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_107_SOH", "path": "Battery", "fmt": {"bix": 1696, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 107 health"},
+    {"id": "VAUXHALLOPEL_BAT_CELL_108_SOH", "path": "Battery", "fmt": {"bix": 1712, "len": 16, "max": 4095.93, "div": 16, "unit": "percent" }, "name": "Battery cell 108 health"}
   ]},
 { "hdr": "6B4", "rax": "694", "fcm1": true, "dbg": true, "cmd": {"22": "D802"}, "freq": 0.25,
   "signals": [
@@ -2379,7 +2491,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0127"}, "freq": 5,
   "signals": [
-    {"id": "VAUXHALLOPEL_AAT", "path": "Engine", "fmt": { "len": 8, "max": 376, "min": -83, "mul": 9, "div": 5, "add": -83, "unit": "fahrenheit" }, "name": "Ambient temperature"}
+    {"id": "VAUXHALLOPEL_AAT_V2", "path": "Engine", "fmt": { "len": 8, "max": 376, "min": -83, "mul": 9, "div": 5, "add": -83, "unit": "fahrenheit" }, "name": "Ambient temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "012B"}, "freq": 5,
   "signals": [
